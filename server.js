@@ -18,7 +18,15 @@ connectDB();
 const app = express();
 
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://slug-panel.onrender.com",
+    headers: {
+      "Access-Control-Allow-Origin": "https://slug-panel.onrender.com", // incorrect
+      "Access-Control-Allow-Credentials": true, // incorrect
+    },
+  })
+);
 app.use(express.json());
 app.use(morgan("dev"));
 
