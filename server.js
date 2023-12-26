@@ -18,15 +18,13 @@ connectDB();
 const app = express();
 
 //middlewares
-app.use(
-  cors({
-    origin: "https://ecommerce-backend-wzts.onrender.com",
-    headers: {
-      "Access-Control-Allow-Origin": "https://ecommerce-website-app.netlify.app", // incorrect
-      "Access-Control-Allow-Credentials": true, // incorrect
-    },
-  })
-);
+app.use(cors());
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://ecommerce-website-app.netlify.app');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 app.use(express.json());
 app.use(morgan("dev"));
 
