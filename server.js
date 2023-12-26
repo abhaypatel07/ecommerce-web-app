@@ -20,7 +20,7 @@ const app = express();
 //middlewares
 app.use(
   cors({
-    origin: "https://slug-panel.onrender.com",
+    origin: "https://ecommerce-backend-wzts.onrender.com",
     headers: {
       "Access-Control-Allow-Origin": "https://ecommerce-website-app.netlify.app", // incorrect
       "Access-Control-Allow-Credentials": true, // incorrect
