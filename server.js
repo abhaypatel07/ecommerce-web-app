@@ -22,7 +22,7 @@ app.use(
   cors({
     origin: "https://slug-panel.onrender.com",
     headers: {
-      "Access-Control-Allow-Origin": "https://slug-panel.onrender.com", // incorrect
+      "Access-Control-Allow-Origin": "https://ecommerce-website-app.netlify.app", // incorrect
       "Access-Control-Allow-Credentials": true, // incorrect
     },
   })
